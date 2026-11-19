@@ -31,7 +31,7 @@ I built this to learn how a tool-using language model agent fits together with s
 ## How it works
 
 ```mermaid
-flowchart LR
+flowchart TD
     Mic([Microphone]) --> Wake["Wake word + Whisper"]
     Wake --> Fast{"Simple command?"}
     Fast -- yes --> Tools["Tools: apps, lights, reminders, weather, journeys, ..."]
