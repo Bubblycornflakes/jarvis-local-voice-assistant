@@ -45,7 +45,6 @@ CASES = [
     # smart home beyond the fast lane
     ("turn the bedroom lamp to 20 percent", "control_device", "bedroom"),
     ("switch off the desk lamp", "control_device", "desk"),
-    ("set the volume a bit lower, around 30", "set_volume", "30"),
     # hard questions go to Claude
     ("write me a short cover letter for a lab technician role", "ask_claude", None),
     ("explain how a transformer neural network works in detail", "ask_claude", None),

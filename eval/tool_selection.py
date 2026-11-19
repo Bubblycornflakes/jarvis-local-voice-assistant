@@ -32,7 +32,10 @@ def check_cases() -> None:
 
     from jarvis import fastlane, tools
 
-    with mock.patch.multiple(tools, **{n: mock.Mock(return_value="ok") for n in names & set(tools.BY_NAME)}):
+    from jarvis import config
+
+    with mock.patch.multiple(tools, **{n: mock.Mock(return_value="ok") for n in names & set(tools.BY_NAME)}), \
+            mock.patch.dict(config.TAPO_DEVICES, {"bedroom lamp": "x", "desk lamp": "x", "bedroom": "x", "desk": "x"}):
         handled = [c[0] for c in CASES if fastlane.route(c[0]) is not None]
     if handled:
         sys.exit(f"These cases are answered by the fast lane, so they never reach the model: {handled}")

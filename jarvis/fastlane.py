@@ -2,7 +2,7 @@
 Only short, unambiguous requests match; anything else goes to the brain."""
 import re
 
-from . import tools
+from . import config, tools
 
 FILLER = re.compile(r"\b(please|jarvis|could you|can you|would you|will you|for me|just|now|mate|the)\b|[,.!?]", re.I)
 
@@ -26,8 +26,10 @@ def route(text: str) -> tuple[str, dict, str] | None:
         return tool, args, getattr(tools, tool)(**args)
 
     # lights
+    # a named device ("the desk lamp") is the brain's job; the fast lane only handles "all the lights"
+    named = any(name in t for name in config.TAPO_DEVICES)
     # must read as a command ("turn the light on"), not a remark ("I left the light on at work")
-    if re.search(r"\b(lights?|lamp|bulb)\b", t) and re.match(r"(turn|switch|set|put|dim|make|lights?|lamp|bulb)\b", t) \
+    if not named and re.search(r"\b(lights?|lamp|bulb)\b", t) and re.match(r"(turn|switch|set|put|dim|make|lights?|lamp|bulb)\b", t) \
             and not re.search(r"\b(is|are|was|were|too|broke|broken|isn'?t|aren'?t|bit)\b", t):
         if re.search(r"\b(off|out)\b", t):
             return run("control_device", name="all", action="off")

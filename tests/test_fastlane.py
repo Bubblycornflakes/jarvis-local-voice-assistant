@@ -73,6 +73,11 @@ class FastLane(unittest.TestCase):
                     wrong.append((text, (tool, args), got))
         self.assertEqual(wrong, [], f"{len(wrong)} of {len(CASES)} cases wrong")
 
+    def test_named_device_goes_to_the_brain(self):
+        with mock.patch.dict(fastlane.config.TAPO_DEVICES, {"desk lamp": "192.0.2.1"}):
+            self.assertIsNone(fastlane.route("switch off the desk lamp"))
+            self.assertIsNotNone(fastlane.route("turn the lights off"))
+
     def test_volume_is_clamped(self):
         result = fastlane.route("set the volume to 250")
         self.assertEqual(result[1], {"level": 100})
