@@ -276,7 +276,7 @@ def add_task(task: str, day: str = "today") -> str:
 
 
 def complete_task(task: str) -> str:
-    """Mark a to-do or habit as done (e.g. 'gym', 'job applications')."""
+    """Mark a to-do or habit as done (e.g. 'exercise', 'study')."""
     t = household.complete_task(task)
     if not t:
         return f"Nothing on today's list matches {task}."
