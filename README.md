@@ -114,3 +114,7 @@ Everything is set in `.env`; see `.env.example`. Free-form notes about you can g
 - Interrupting it by voice depends on your speakers and room; it is unreliable on laptop speakers.
 - If `CITY` is not set in `.env`, the code looks up your city from your IP address through ipinfo.io when it starts. Set `CITY` to avoid that network call.
 - Some tools (smart lights, journey times) assume a home setup you configure yourself.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
