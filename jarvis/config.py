@@ -53,7 +53,7 @@ USER_NAME = os.getenv("USER_NAME", "sir")
 HOME_POSTCODE = os.getenv("HOME_POSTCODE", "")
 # added to the to-do list every morning and tracked in the household log
 DAILY_HABITS = [h.strip() for h in os.getenv(
-    "DAILY_HABITS", "gym,job applications,study,read a book,ten thousand steps").split(",") if h.strip()]
+    "DAILY_HABITS", "exercise,study,read,ten thousand steps").split(",") if h.strip()]
 PROFILE = ROOT / "about me.txt"  # free-form notes about the user, edit any time
 
 

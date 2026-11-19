@@ -50,11 +50,12 @@ Run it:
 
 ## Settings
 
-Everything is set in `.env`. See `.env.example`. API keys and smart-home logins stay in `.env`, which is git-ignored.
+Everything is set in `.env`. See `.env.example`. Free-form notes about you can go in `about me.txt`, which is git-ignored. API keys and smart-home logins stay in `.env`, which is git-ignored.
 
 ## Limits
 
 - Mac only.
 - It needs a machine that can run a 20-billion-parameter model locally, or you can set a smaller `OLLAMA_MODEL`.
-- It has no automated tests and I have not measured accuracy. Speed is logged in `data/timing.log`.
+- Tests cover the instant-command router and the reminder time parser only (`python -m unittest discover -s tests -v`). The language model's behaviour, speech recognition and the tools that touch your Mac or smart home are not tested, and I have not measured accuracy. Speed is logged in `data/timing.log`.
+- If `CITY` is not set in `.env`, the code looks up your city from your IP address through ipinfo.io when it starts. Set `CITY` to avoid that network call.
 - Some tools (smart lights, journey times) assume a home setup you configure yourself.
