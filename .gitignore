@@ -1,0 +1,15 @@
+# secrets and personal data
+.env
+about me.txt
+data/
+# environment and build
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+# large model files (download separately, see README)
+models/
+*.onnx
+*.bin
+# logs
+*.log

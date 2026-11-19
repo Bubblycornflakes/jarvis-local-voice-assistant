@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "jarvis": {
+      "command": "/path/to/Jarvis/.venv/bin/python",
+      "args": ["-m", "jarvis.mcp_server"],
+      "env": {"PYTHONPATH": "/path/to/Jarvis", "PYTHONWARNINGS": "ignore"},
+      "enabledTools": ["lights", "weather", "travel_time", "reminder", "daily_list"],
+      "readOnlyTools": ["weather", "travel_time"]
+    }
+  }
+}

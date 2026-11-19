@@ -1,0 +1,14 @@
+# Third-party packages imported by the code. Versions are not pinned.
+ollama
+httpx
+mcp
+numpy
+sounddevice
+pywebview
+mlx-whisper
+faster-whisper
+kokoro-onnx
+openwakeword
+ddgs
+tapo
+anthropic

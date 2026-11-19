@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>J.A.R.V.I.S.</title>
+<style>
+  :root { --c: #3ff3ff; --c2: #1a8cff; --bg: #02060c; --dim: #0d4a5a; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { height: 100%; background: radial-gradient(ellipse at center, #06202c 0%, var(--bg) 70%);
+    color: var(--c); font-family: "SF Mono", Menlo, monospace; overflow: hidden; }
+  body { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; padding: 20px; }
+  .grid { position: fixed; inset: 0; pointer-events: none; opacity: .07;
+    background-image: linear-gradient(var(--c) 1px, transparent 1px), linear-gradient(90deg, var(--c) 1px, transparent 1px);
+    background-size: 40px 40px; }
+  .reactor { position: relative; width: 260px; height: 260px; }
+  .ring { position: absolute; border-radius: 50%; border: 2px solid var(--c); inset: 0;
+    box-shadow: 0 0 18px var(--c), inset 0 0 18px var(--c2); }
+  .r1 { border-style: dashed; animation: spin 18s linear infinite; }
+  .r2 { inset: 22px; border-color: transparent var(--c) transparent var(--c); animation: spin 6s linear infinite reverse; }
+  .r3 { inset: 48px; border-width: 6px; border-color: var(--c) transparent var(--c2) transparent; animation: spin 3s linear infinite; }
+  .core { position: absolute; inset: 88px; border-radius: 50%; background: radial-gradient(#fff, var(--c) 40%, var(--c2) 75%, transparent);
+    box-shadow: 0 0 40px var(--c), 0 0 90px var(--c2); animation: pulse 3s ease-in-out infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes pulse { 50% { transform: scale(.88); opacity: .75; } }
+  body.listening .core { animation-duration: .6s; }
+  body.thinking .r2, body.thinking .r3 { animation-duration: .8s; }
+  body.speaking .core { animation-duration: .35s; }
+  body.listening { --c: #7dffb0; }
+  body.thinking { --c: #ffd25e; }
+  h1 { letter-spacing: 14px; font-weight: 300; font-size: 22px; text-shadow: 0 0 12px var(--c); }
+  #status { font-size: 12px; letter-spacing: 4px; text-transform: uppercase; opacity: .8; min-height: 16px; }
+  #log { width: min(640px, 100%); height: 190px; overflow-y: auto; font-size: 13px; line-height: 1.5;
+    border: 1px solid var(--dim); padding: 10px 14px; background: rgba(0, 30, 40, .35); }
+  #log div { margin-bottom: 6px; } .you { color: #9fb7c4; } .you::before { content: "YOU › "; opacity: .6; }
+  .jarvis::before { content: "JARVIS › "; opacity: .6; } .tool { color: #ffd25e; font-size: 11px; opacity: .8; }
+  .tool::before { content: "⚙ "; }
+  form { width: min(640px, 100%); display: flex; }
+  input { flex: 1; background: transparent; border: 1px solid var(--dim); color: var(--c); padding: 10px 14px;
+    font: inherit; outline: none; } input:focus { border-color: var(--c); box-shadow: 0 0 10px var(--dim); }
+  #clock { position: fixed; top: 16px; right: 22px; font-size: 12px; letter-spacing: 3px; opacity: .7; }
+</style>
+</head>
+<body>
+<div class="grid"></div>
+<div id="clock"></div>
+<div class="reactor"><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><div class="core"></div></div>
+<h1>J.A.R.V.I.S.</h1>
+<div id="status">Initialising</div>
+<div id="log"></div>
+<form id="f"><input id="q" placeholder="Type a command, or say “Jarvis”" autocomplete="off"></form>
+<script>
+  const log = document.getElementById("log");
+  function setState(state, label) {
+    document.body.className = state;
+    document.getElementById("status").textContent = label || state;
+  }
+  function add(kind, text) {
+    const d = document.createElement("div");
+    d.className = kind; d.textContent = text;
+    log.appendChild(d); log.scrollTop = log.scrollHeight;
+  }
+  document.getElementById("f").onsubmit = e => {
+    e.preventDefault();
+    const q = document.getElementById("q");
+    if (q.value.trim() && window.pywebview) window.pywebview.api.send(q.value.trim());
+    q.value = "";
+  };
+  setInterval(() => document.getElementById("clock").textContent =
+    new Date().toLocaleTimeString("en-GB") + "  ·  " + new Date().toLocaleDateString("en-GB", {weekday: "long", day: "numeric", month: "long"}), 1000);
+</script>
+</body>
+</html>
