@@ -1,0 +1,14 @@
+Model: qwen3:8b   cases: 43   runs each: 3   thinking: on
+Right tool or right silence: 95%
+Right tool and right arguments: 95%
+Tool requests answered correctly: 96%
+Correctly made no tool call: 92%
+Median seconds per request: 5.4   slowest: 42.7
+
+Mistakes:
+  'explain how a transformer neural network works in detail': wanted ask_claude, got None 
+  'plan a three day trip to Edinburgh on a budget': wanted ask_claude, got None 
+  'plan a three day trip to Edinburgh on a budget': wanted ask_claude, got None 
+  'plan a three day trip to Edinburgh on a budget': wanted ask_claude, got travel_time {'destination': 'Edinburgh'}
+  "my friend's name is Alex and he lives in Leeds": wanted None, got remember {'fact': "My friend's name is Alex, and he lives in Leeds."}
+  "my friend's name is Alex and he lives in Leeds": wanted None, got remember {'fact': 'The master of the house has a friend named Alex who lives in Leeds.'}

@@ -1,0 +1,1298 @@
+{
+  "model": "qwen3:8b",
+  "runs": 3,
+  "rows": [
+    {
+      "text": "open Spotify",
+      "want": "open_app",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 11.32
+    },
+    {
+      "text": "open Spotify",
+      "want": "open_app",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.43
+    },
+    {
+      "text": "open Spotify",
+      "want": "open_app",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.24
+    },
+    {
+      "text": "launch Safari for me",
+      "want": "open_app",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.54
+    },
+    {
+      "text": "launch Safari for me",
+      "want": "open_app",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.44
+    },
+    {
+      "text": "launch Safari for me",
+      "want": "open_app",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.43
+    },
+    {
+      "text": "close Notes",
+      "want": "quit_app",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.61
+    },
+    {
+      "text": "close Notes",
+      "want": "quit_app",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.24
+    },
+    {
+      "text": "close Notes",
+      "want": "quit_app",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.47
+    },
+    {
+      "text": "quit Slack",
+      "want": "quit_app",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.36
+    },
+    {
+      "text": "quit Slack",
+      "want": "quit_app",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.22
+    },
+    {
+      "text": "quit Slack",
+      "want": "quit_app",
+      "got": "quit_app",
+      "args": {
+        "name": "Slack"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.69
+    },
+    {
+      "text": "run my morning shortcut",
+      "want": "run_shortcut",
+      "got": "run_shortcut",
+      "args": {
+        "name": "morning"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.85
+    },
+    {
+      "text": "run my morning shortcut",
+      "want": "run_shortcut",
+      "got": "run_shortcut",
+      "args": {
+        "name": "morning"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.72
+    },
+    {
+      "text": "run my morning shortcut",
+      "want": "run_shortcut",
+      "got": "run_shortcut",
+      "args": {
+        "name": "morning"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.72
+    },
+    {
+      "text": "make a note that the boiler needs servicing",
+      "want": "make_note",
+      "got": "make_note",
+      "args": {
+        "text": "The boiler needs servicing."
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.88
+    },
+    {
+      "text": "make a note that the boiler needs servicing",
+      "want": "make_note",
+      "got": "make_note",
+      "args": {
+        "text": "The boiler needs servicing."
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.77
+    },
+    {
+      "text": "make a note that the boiler needs servicing",
+      "want": "make_note",
+      "got": "make_note",
+      "args": {
+        "text": "The boiler needs servicing."
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.78
+    },
+    {
+      "text": "what's on my screen",
+      "want": "look_at_screen",
+      "got": "look_at_screen",
+      "args": {
+        "question": "what am I looking at"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.93
+    },
+    {
+      "text": "what's on my screen",
+      "want": "look_at_screen",
+      "got": "look_at_screen",
+      "args": {
+        "question": "what am I looking at"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.81
+    },
+    {
+      "text": "what's on my screen",
+      "want": "look_at_screen",
+      "got": "look_at_screen",
+      "args": {
+        "question": "what am I looking at"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.81
+    },
+    {
+      "text": "what's on my calendar today",
+      "want": "calendar",
+      "got": "calendar",
+      "args": {
+        "day": "today"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.77
+    },
+    {
+      "text": "what's on my calendar today",
+      "want": "calendar",
+      "got": "calendar",
+      "args": {
+        "day": "today"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.64
+    },
+    {
+      "text": "what's on my calendar today",
+      "want": "calendar",
+      "got": "calendar",
+      "args": {
+        "day": "today"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.64
+    },
+    {
+      "text": "do I have anything on tomorrow",
+      "want": "calendar",
+      "got": "calendar",
+      "args": {
+        "day": "tomorrow"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.79
+    },
+    {
+      "text": "do I have anything on tomorrow",
+      "want": "calendar",
+      "got": "calendar",
+      "args": {
+        "day": "tomorrow"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.67
+    },
+    {
+      "text": "do I have anything on tomorrow",
+      "want": "calendar",
+      "got": "calendar",
+      "args": {
+        "day": "tomorrow"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.67
+    },
+    {
+      "text": "what's on my to do list",
+      "want": "todays_tasks",
+      "got": "todays_tasks",
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.7
+    },
+    {
+      "text": "what's on my to do list",
+      "want": "todays_tasks",
+      "got": "todays_tasks",
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.59
+    },
+    {
+      "text": "what's on my to do list",
+      "want": "todays_tasks",
+      "got": "todays_tasks",
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.59
+    },
+    {
+      "text": "add buy milk to my list",
+      "want": "add_task",
+      "got": "add_task",
+      "args": {
+        "task": "buy milk",
+        "day": "today"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.99
+    },
+    {
+      "text": "add buy milk to my list",
+      "want": "add_task",
+      "got": "add_task",
+      "args": {
+        "task": "buy milk",
+        "day": "today"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.86
+    },
+    {
+      "text": "add buy milk to my list",
+      "want": "add_task",
+      "got": "add_task",
+      "args": {
+        "task": "buy milk",
+        "day": "today"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.85
+    },
+    {
+      "text": "I finished the laundry",
+      "want": "complete_task",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.68
+    },
+    {
+      "text": "I finished the laundry",
+      "want": "complete_task",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.45
+    },
+    {
+      "text": "I finished the laundry",
+      "want": "complete_task",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.45
+    },
+    {
+      "text": "take the dentist off my list",
+      "want": "remove_task",
+      "got": "remove_task",
+      "args": {
+        "task": "dentist"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.82
+    },
+    {
+      "text": "take the dentist off my list",
+      "want": "remove_task",
+      "got": "remove_task",
+      "args": {
+        "task": "dentist"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.69
+    },
+    {
+      "text": "take the dentist off my list",
+      "want": "remove_task",
+      "got": "remove_task",
+      "args": {
+        "task": "dentist"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.69
+    },
+    {
+      "text": "I walked 8000 steps today",
+      "want": "log_steps",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 1.2
+    },
+    {
+      "text": "I walked 8000 steps today",
+      "want": "log_steps",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.77
+    },
+    {
+      "text": "I walked 8000 steps today",
+      "want": "log_steps",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 1.05
+    },
+    {
+      "text": "how have my habits been over the last week",
+      "want": "habit_report",
+      "got": "habit_report",
+      "args": {
+        "days": 7
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.77
+    },
+    {
+      "text": "how have my habits been over the last week",
+      "want": "habit_report",
+      "got": "habit_report",
+      "args": {
+        "days": 7
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.67
+    },
+    {
+      "text": "how have my habits been over the last week",
+      "want": "habit_report",
+      "got": "habit_report",
+      "args": {
+        "days": 7
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.67
+    },
+    {
+      "text": "give me my morning briefing",
+      "want": "morning_briefing",
+      "got": "morning_briefing",
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.77
+    },
+    {
+      "text": "give me my morning briefing",
+      "want": "morning_briefing",
+      "got": "morning_briefing",
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.64
+    },
+    {
+      "text": "give me my morning briefing",
+      "want": "morning_briefing",
+      "got": "morning_briefing",
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.64
+    },
+    {
+      "text": "remind me to call mum in 20 minutes",
+      "want": "set_reminder",
+      "got": "set_reminder",
+      "args": {
+        "text": "call mum",
+        "when": "in 20 minutes"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.1
+    },
+    {
+      "text": "remind me to call mum in 20 minutes",
+      "want": "set_reminder",
+      "got": "set_reminder",
+      "args": {
+        "text": "call mum",
+        "when": "in 20 minutes"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.99
+    },
+    {
+      "text": "remind me to call mum in 20 minutes",
+      "want": "set_reminder",
+      "got": "set_reminder",
+      "args": {
+        "text": "call mum",
+        "when": "in 20 minutes"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.99
+    },
+    {
+      "text": "remind me to take the bins out at 7pm",
+      "want": "set_reminder",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.77
+    },
+    {
+      "text": "remind me to take the bins out at 7pm",
+      "want": "set_reminder",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.61
+    },
+    {
+      "text": "remind me to take the bins out at 7pm",
+      "want": "set_reminder",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.62
+    },
+    {
+      "text": "what reminders do I have",
+      "want": "list_reminders",
+      "got": "list_reminders",
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.72
+    },
+    {
+      "text": "what reminders do I have",
+      "want": "list_reminders",
+      "got": "list_reminders",
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.59
+    },
+    {
+      "text": "what reminders do I have",
+      "want": "list_reminders",
+      "got": "list_reminders",
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.58
+    },
+    {
+      "text": "what's the weather in Paris",
+      "want": "weather",
+      "got": "weather",
+      "args": {
+        "city": "Paris"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.77
+    },
+    {
+      "text": "what's the weather in Paris",
+      "want": "weather",
+      "got": "weather",
+      "args": {
+        "city": "Paris"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.64
+    },
+    {
+      "text": "what's the weather in Paris",
+      "want": "weather",
+      "got": "weather",
+      "args": {
+        "city": "Paris"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.64
+    },
+    {
+      "text": "will it rain today",
+      "want": "rain_today",
+      "got": "rain_today",
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.69
+    },
+    {
+      "text": "will it rain today",
+      "want": "rain_today",
+      "got": "rain_today",
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.56
+    },
+    {
+      "text": "will it rain today",
+      "want": "rain_today",
+      "got": "rain_today",
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.56
+    },
+    {
+      "text": "how long to get to Heathrow",
+      "want": "travel_time",
+      "got": "travel_time",
+      "args": {
+        "destination": "Heathrow"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.83
+    },
+    {
+      "text": "how long to get to Heathrow",
+      "want": "travel_time",
+      "got": "travel_time",
+      "args": {
+        "destination": "Heathrow"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.72
+    },
+    {
+      "text": "how long to get to Heathrow",
+      "want": "travel_time",
+      "got": "travel_time",
+      "args": {
+        "destination": "Heathrow"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.72
+    },
+    {
+      "text": "find a good curry house nearby",
+      "want": "find_nearby",
+      "got": "find_nearby",
+      "args": {
+        "kind": "curry house",
+        "halal": true
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.04
+    },
+    {
+      "text": "find a good curry house nearby",
+      "want": "find_nearby",
+      "got": "find_nearby",
+      "args": {
+        "kind": "restaurant",
+        "halal": true
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.86
+    },
+    {
+      "text": "find a good curry house nearby",
+      "want": "find_nearby",
+      "got": "find_nearby",
+      "args": {
+        "kind": "restaurant",
+        "halal": true
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.86
+    },
+    {
+      "text": "search the web for the latest Ollama release",
+      "want": "web_search",
+      "got": "web_search",
+      "args": {
+        "query": "latest Ollama release"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.88
+    },
+    {
+      "text": "search the web for the latest Ollama release",
+      "want": "web_search",
+      "got": "web_search",
+      "args": {
+        "query": "latest Ollama release"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.77
+    },
+    {
+      "text": "search the web for the latest Ollama release",
+      "want": "web_search",
+      "got": "web_search",
+      "args": {
+        "query": "latest Ollama release"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.78
+    },
+    {
+      "text": "who won the Premier League last season",
+      "want": "web_search",
+      "got": "web_search",
+      "args": {
+        "query": "Premier League winner 2022/23"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.07
+    },
+    {
+      "text": "who won the Premier League last season",
+      "want": "web_search",
+      "got": "web_search",
+      "args": {
+        "query": "Premier League winner 2022/23"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.96
+    },
+    {
+      "text": "who won the Premier League last season",
+      "want": "web_search",
+      "got": "web_search",
+      "args": {
+        "query": "Premier League winner 2022/23"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.97
+    },
+    {
+      "text": "remember that my passport expires in March",
+      "want": "remember",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.5
+    },
+    {
+      "text": "remember that my passport expires in March",
+      "want": "remember",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.75
+    },
+    {
+      "text": "remember that my passport expires in March",
+      "want": "remember",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.45
+    },
+    {
+      "text": "forget that I like jazz",
+      "want": "forget",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.87
+    },
+    {
+      "text": "forget that I like jazz",
+      "want": "forget",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.69
+    },
+    {
+      "text": "forget that I like jazz",
+      "want": "forget",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.64
+    },
+    {
+      "text": "I'm allergic to peanuts, please remember that",
+      "want": "remember",
+      "got": "remember",
+      "args": {
+        "fact": "The master of the house is allergic to peanuts."
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.02
+    },
+    {
+      "text": "I'm allergic to peanuts, please remember that",
+      "want": "remember",
+      "got": "remember",
+      "args": {
+        "fact": "The master of the house is allergic to peanuts."
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.9
+    },
+    {
+      "text": "I'm allergic to peanuts, please remember that",
+      "want": "remember",
+      "got": "remember",
+      "args": {
+        "fact": "The master of the house is allergic to peanuts."
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.89
+    },
+    {
+      "text": "log that I finished my dissertation draft",
+      "want": "log_note",
+      "got": "log_note",
+      "args": {
+        "text": "Completed dissertation draft."
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.86
+    },
+    {
+      "text": "log that I finished my dissertation draft",
+      "want": "log_note",
+      "got": "log_note",
+      "args": {
+        "text": "Finished dissertation draft"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.73
+    },
+    {
+      "text": "log that I finished my dissertation draft",
+      "want": "log_note",
+      "got": "log_note",
+      "args": {
+        "text": "Completed dissertation draft."
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.75
+    },
+    {
+      "text": "what did I do over the last three days",
+      "want": "read_log",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.63
+    },
+    {
+      "text": "what did I do over the last three days",
+      "want": "read_log",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.89
+    },
+    {
+      "text": "what did I do over the last three days",
+      "want": "read_log",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.53
+    },
+    {
+      "text": "turn the bedroom lamp to 20 percent",
+      "want": "control_device",
+      "got": "control_device",
+      "args": {
+        "name": "bedroom lamp",
+        "action": "on",
+        "brightness": 20
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.18
+    },
+    {
+      "text": "turn the bedroom lamp to 20 percent",
+      "want": "control_device",
+      "got": "control_device",
+      "args": {
+        "action": "on",
+        "brightness": 20,
+        "name": "bedroom lamp"
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.08
+    },
+    {
+      "text": "turn the bedroom lamp to 20 percent",
+      "want": "control_device",
+      "got": "control_device",
+      "args": {
+        "name": "bedroom lamp",
+        "action": "on",
+        "brightness": 20
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.08
+    },
+    {
+      "text": "switch off the desk lamp",
+      "want": "control_device",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.63
+    },
+    {
+      "text": "switch off the desk lamp",
+      "want": "control_device",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.51
+    },
+    {
+      "text": "switch off the desk lamp",
+      "want": "control_device",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.5
+    },
+    {
+      "text": "write me a short cover letter for a lab technician role",
+      "want": "ask_claude",
+      "got": "ask_claude",
+      "args": {
+        "question": "Write me a short cover letter for a lab technician role."
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.14
+    },
+    {
+      "text": "write me a short cover letter for a lab technician role",
+      "want": "ask_claude",
+      "got": "ask_claude",
+      "args": {
+        "question": "Write a short cover letter for a lab technician role."
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.0
+    },
+    {
+      "text": "write me a short cover letter for a lab technician role",
+      "want": "ask_claude",
+      "got": "ask_claude",
+      "args": {
+        "question": "Write a short cover letter for a lab technician role."
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.03
+    },
+    {
+      "text": "explain how a transformer neural network works in detail",
+      "want": "ask_claude",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 9.37
+    },
+    {
+      "text": "explain how a transformer neural network works in detail",
+      "want": "ask_claude",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.55
+    },
+    {
+      "text": "explain how a transformer neural network works in detail",
+      "want": "ask_claude",
+      "got": null,
+      "args": {},
+      "tool_ok": false,
+      "arg_ok": false,
+      "seconds": 0.55
+    },
+    {
+      "text": "plan a three day trip to Edinburgh on a budget",
+      "want": "ask_claude",
+      "got": "ask_claude",
+      "args": {
+        "question": "Plan a three-day trip to Edinburgh on a budget, including accommodation, transportation, meals, and attractions."
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.39
+    },
+    {
+      "text": "plan a three day trip to Edinburgh on a budget",
+      "want": "ask_claude",
+      "got": "ask_claude",
+      "args": {
+        "question": "Plan a three-day trip to Edinburgh on a budget, including accommodation, transportation, meals, and attractions."
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.28
+    },
+    {
+      "text": "plan a three day trip to Edinburgh on a budget",
+      "want": "ask_claude",
+      "got": "ask_claude",
+      "args": {
+        "question": "Plan a three-day trip to Edinburgh on a budget, including transportation, accommodation, meals, and activities."
+      },
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.28
+    },
+    {
+      "text": "thanks, that's all",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.05
+    },
+    {
+      "text": "thanks, that's all",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.75
+    },
+    {
+      "text": "thanks, that's all",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.76
+    },
+    {
+      "text": "how are you today",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.57
+    },
+    {
+      "text": "how are you today",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.45
+    },
+    {
+      "text": "how are you today",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.99
+    },
+    {
+      "text": "tell me a joke",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.51
+    },
+    {
+      "text": "tell me a joke",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.36
+    },
+    {
+      "text": "tell me a joke",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.63
+    },
+    {
+      "text": "what is two plus two",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.5
+    },
+    {
+      "text": "what is two plus two",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.37
+    },
+    {
+      "text": "what is two plus two",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.37
+    },
+    {
+      "text": "good morning",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.2
+    },
+    {
+      "text": "good morning",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.3
+    },
+    {
+      "text": "good morning",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.36
+    },
+    {
+      "text": "I left the light on at work",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.48
+    },
+    {
+      "text": "I left the light on at work",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.06
+    },
+    {
+      "text": "I left the light on at work",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.86
+    },
+    {
+      "text": "the music was too loud at the pub last night",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.16
+    },
+    {
+      "text": "the music was too loud at the pub last night",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.0
+    },
+    {
+      "text": "the music was too loud at the pub last night",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 0.72
+    },
+    {
+      "text": "my friend's name is Alex and he lives in Leeds",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.0
+    },
+    {
+      "text": "my friend's name is Alex and he lives in Leeds",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.08
+    },
+    {
+      "text": "my friend's name is Alex and he lives in Leeds",
+      "want": null,
+      "got": null,
+      "args": {},
+      "tool_ok": true,
+      "arg_ok": true,
+      "seconds": 1.05
+    }
+  ]
+}

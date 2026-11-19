@@ -1,0 +1,26 @@
+Model: qwen3:4b   cases: 43   runs each: 3
+Right tool or right silence: 86%
+Right tool and right arguments: 86%
+Tool requests answered correctly: 89%
+Correctly made no tool call: 75%
+Median seconds per request: 7.1   slowest: 94.7
+
+Mistakes:
+  'run my morning shortcut': wanted run_shortcut, got run_scene {'name': 'morning'}
+  'run my morning shortcut': wanted run_shortcut, got run_scene {'name': 'morning'}
+  'do I have anything on tomorrow': wanted calendar, got todays_tasks {'day': 'tomorrow'}
+  'I finished the laundry': wanted complete_task, got log_note {'text': 'Laundry completed today.'}
+  'I walked 8000 steps today': wanted log_steps, got complete_task {'task': 'steps'}
+  'I walked 8000 steps today': wanted log_steps, got complete_task {'task': 'steps'}
+  'I walked 8000 steps today': wanted log_steps, got None 
+  'write me a short cover letter for a lab technician role': wanted ask_claude, got web_search {'query': 'short cover letter lab technician role template'}
+  'write me a short cover letter for a lab technician role': wanted ask_claude, got None 
+  'plan a three day trip to Edinburgh on a budget': wanted ask_claude, got travel_time {'destination': 'Edinburgh'}
+  'plan a three day trip to Edinburgh on a budget': wanted ask_claude, got web_search {'query': 'budget travel Edinburgh 3 days'}
+  'plan a three day trip to Edinburgh on a budget': wanted ask_claude, got travel_time {'destination': 'Edinburgh'}
+  'good morning': wanted None, got morning_briefing {}
+  'I left the light on at work': wanted None, got control_device {'name': 'all', 'action': 'off'}
+  'the music was too loud at the pub last night': wanted None, got log_note {'text': 'Loud music at pub last night'}
+  "my friend's name is Alex and he lives in Leeds": wanted None, got remember {'fact': 'User has a friend named Alex who lives in Leeds'}
+  "my friend's name is Alex and he lives in Leeds": wanted None, got remember {'fact': 'Friend Alex lives in Leeds'}
+  "my friend's name is Alex and he lives in Leeds": wanted None, got remember {'fact': 'Alex is a friend who lives in Leeds'}

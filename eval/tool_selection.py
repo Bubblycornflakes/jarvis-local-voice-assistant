@@ -2,7 +2,11 @@
 
     python eval/tool_selection.py --model gpt-oss:20b
     python eval/tool_selection.py --model qwen3:8b --runs 3
+    python eval/tool_selection.py --model qwen3:8b --runs 3 --think on
     python eval/tool_selection.py --check      # validate the cases only, no model needed
+
+--think chooses the model's reasoning setting: "project" (default) uses what the app uses
+(brain._think_option), "on" turns reasoning on, "off" turns it off.
 
 The tools are NOT executed. Only the model's choice (which tool, which arguments) is recorded,
 so nothing is switched on, played or sent. Results are written to eval/results/<model>.json.
@@ -43,19 +47,20 @@ def check_cases() -> None:
           f"{len({c[1] for c in CASES if c[1]})} of {len(names)}")
 
 
-def run(model: str, runs: int) -> dict:
+def run(model: str, runs: int, think: str = "project") -> dict:
     import ollama
 
     from jarvis import brain
 
     b = brain.Brain()
     system = b._system()
+    think_kw = {"project": brain._think_option(model), "on": {"think": True}, "off": {"think": False}}[think]
     rows = []
     for text, want_tool, want_arg in CASES:
         for _ in range(runs):
             msgs = [system, {"role": "user", "content": text}]
             t0 = time.time()
-            resp = ollama.chat(model=model, messages=msgs, tools=brain.ALL_TOOLS, **brain._think_option(model))
+            resp = ollama.chat(model=model, messages=msgs, tools=brain.ALL_TOOLS, **think_kw)
             secs = time.time() - t0
             calls = resp.message.tool_calls or []
             got_tool = calls[0].function.name if calls else None
@@ -64,7 +69,7 @@ def run(model: str, runs: int) -> dict:
             arg_ok = tool_ok and (want_arg is None or want_arg in json.dumps(got_args).lower())
             rows.append({"text": text, "want": want_tool, "got": got_tool, "args": got_args,
                          "tool_ok": tool_ok, "arg_ok": arg_ok, "seconds": round(secs, 2)})
-    return {"model": model, "runs": runs, "rows": rows}
+    return {"model": model, "runs": runs, "think": think, "rows": rows}
 
 
 def summarise(result: dict) -> str:
@@ -76,7 +81,8 @@ def summarise(result: dict) -> str:
     no_tool = [r for r in rows if not r["want"]]
     secs = [r["seconds"] for r in rows]
     lines = [
-        f"Model: {result['model']}   cases: {len(CASES)}   runs each: {result['runs']}",
+        f"Model: {result['model']}   cases: {len(CASES)}   runs each: {result['runs']}   "
+        f"thinking: {result.get('think', 'project')}",
         f"Right tool or right silence: {tool:.0%}",
         f"Right tool and right arguments: {arg:.0%}",
         f"Tool requests answered correctly: {sum(r['tool_ok'] for r in with_tool) / len(with_tool):.0%}",
@@ -95,13 +101,15 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default=None)
     ap.add_argument("--runs", type=int, default=1)
+    ap.add_argument("--think", choices=["project", "on", "off"], default="project")
     ap.add_argument("--check", action="store_true")
     a = ap.parse_args()
     if a.check or not a.model:
         check_cases()
         sys.exit(0)
-    result = run(a.model, a.runs)
+    result = run(a.model, a.runs, a.think)
     out = ROOT / "eval" / "results"
     out.mkdir(exist_ok=True)
-    (out / (a.model.replace(":", "_").replace("/", "_") + ".json")).write_text(json.dumps(result, indent=2))
+    suffix = "" if a.think == "project" else f"_think-{a.think}"
+    (out / (a.model.replace(":", "_").replace("/", "_") + suffix + ".json")).write_text(json.dumps(result, indent=2))
     print(summarise(result))

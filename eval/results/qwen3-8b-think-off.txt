@@ -1,0 +1,43 @@
+Model: qwen3:8b   cases: 43   runs each: 3
+Right tool or right silence: 73%
+Right tool and right arguments: 73%
+Tool requests answered correctly: 67%
+Correctly made no tool call: 100%
+Median seconds per request: 0.8   slowest: 11.3
+
+Mistakes:
+  'open Spotify': wanted open_app, got None 
+  'open Spotify': wanted open_app, got None 
+  'open Spotify': wanted open_app, got None 
+  'launch Safari for me': wanted open_app, got None 
+  'launch Safari for me': wanted open_app, got None 
+  'launch Safari for me': wanted open_app, got None 
+  'close Notes': wanted quit_app, got None 
+  'close Notes': wanted quit_app, got None 
+  'close Notes': wanted quit_app, got None 
+  'quit Slack': wanted quit_app, got None 
+  'quit Slack': wanted quit_app, got None 
+  'I finished the laundry': wanted complete_task, got None 
+  'I finished the laundry': wanted complete_task, got None 
+  'I finished the laundry': wanted complete_task, got None 
+  'I walked 8000 steps today': wanted log_steps, got None 
+  'I walked 8000 steps today': wanted log_steps, got None 
+  'I walked 8000 steps today': wanted log_steps, got None 
+  'remind me to take the bins out at 7pm': wanted set_reminder, got None 
+  'remind me to take the bins out at 7pm': wanted set_reminder, got None 
+  'remind me to take the bins out at 7pm': wanted set_reminder, got None 
+  'remember that my passport expires in March': wanted remember, got None 
+  'remember that my passport expires in March': wanted remember, got None 
+  'remember that my passport expires in March': wanted remember, got None 
+  'forget that I like jazz': wanted forget, got None 
+  'forget that I like jazz': wanted forget, got None 
+  'forget that I like jazz': wanted forget, got None 
+  'what did I do over the last three days': wanted read_log, got None 
+  'what did I do over the last three days': wanted read_log, got None 
+  'what did I do over the last three days': wanted read_log, got None 
+  'switch off the desk lamp': wanted control_device, got None 
+  'switch off the desk lamp': wanted control_device, got None 
+  'switch off the desk lamp': wanted control_device, got None 
+  'explain how a transformer neural network works in detail': wanted ask_claude, got None 
+  'explain how a transformer neural network works in detail': wanted ask_claude, got None 
+  'explain how a transformer neural network works in detail': wanted ask_claude, got None 

@@ -86,7 +86,9 @@ def media_control(action: str) -> str:
 
 
 def run_shortcut(name: str) -> str:
-    """Run an Apple Shortcut by its exact name. Also controls Apple Home scenes."""
+    """Run an Apple Shortcut by its exact name. Use this whenever the user says "shortcut"
+    (e.g. "run my morning shortcut" -> name "morning"). Also controls Apple Home scenes.
+    Not for run_scene, which only covers movie, goodnight, focus and relax."""
     r = subprocess.run(["shortcuts", "run", name], capture_output=True, text=True, timeout=60)
     return f"The {name} shortcut has run." if r.returncode == 0 else f"Shortcut failed: {r.stderr.strip()}"
 
@@ -127,7 +129,8 @@ def look_at_screen(question: str = "Describe what's on the screen.") -> str:
 # ---------- Calendar (read only) ----------
 
 def calendar(day: str = "today") -> str:
-    """List events from the Mac Calendar app. day: 'today' or 'tomorrow'."""
+    """List meetings, events and appointments from the Mac Calendar app: use for "what's on",
+    "do I have anything on", "am I free". day: 'today' or 'tomorrow'. Not the to-do list."""
     offset = 1 if day.lower().startswith("tom") else 0
     script = f'''
     set out to ""
@@ -153,7 +156,8 @@ def calendar(day: str = "today") -> str:
 # ---------- Web & info ----------
 
 def web_search(query: str) -> str:
-    """Search the web and return the top results. Use for news, films showing, reviews, facts."""
+    """Search the web and return the top results. Use for news, films showing, reviews, facts.
+    Not for writing (letters, emails, essays) or planning (trips, schedules): those go to ask_claude."""
     from ddgs import DDGS
 
     results = DDGS().text(query, max_results=5)
@@ -180,7 +184,8 @@ def rain_today() -> str:
 
 
 def travel_time(destination: str) -> str:
-    """How long it takes to get from home to a place (airport, station, address, venue), by car and by public transport."""
+    """How long it takes to get from home to a place (airport, station, address, venue), by car and by public transport.
+    Only for "how long / how do I get to X". Not for planning a trip or itinerary: that goes to ask_claude."""
     from . import places
 
     return places.journey(destination)
@@ -231,7 +236,9 @@ async def _tapo(name: str, action: str, brightness: int | None = None) -> str:
 
 def control_device(name: str, action: str, brightness: int = 0) -> str:
     """Turn a Tapo light or smart plug on or off, optionally setting brightness 1-100.
-    name: the device name, or 'all'. action: 'on' or 'off'."""
+    name: the device name, or 'all'. action: 'on' or 'off'.
+    Only when the user commands a change now. A remark about the past or elsewhere
+    ("I left the light on at work") is not a command: do not call this."""
     return asyncio.run(_tapo(name, "on" if brightness else action, brightness or None))
 
 
@@ -260,7 +267,8 @@ def run_scene(name: str) -> str:
 # ---------- Routine: to-dos, habits, the household log ----------
 
 def todays_tasks() -> str:
-    """Today's to-do list including daily habits (gym, applications, study, reading, steps), with what's done."""
+    """Today's to-do list including daily habits (gym, applications, study, reading, steps), with what's done.
+    Takes no arguments and covers only the to-do list, not calendar events (use calendar for those)."""
     tasks = household.tasks_for()
     done = [t["task"] for t in tasks if t["done"]]
     todo = [t["task"] for t in tasks if not t["done"]]
@@ -276,7 +284,7 @@ def add_task(task: str, day: str = "today") -> str:
 
 
 def complete_task(task: str) -> str:
-    """Mark a to-do or habit as done (e.g. 'exercise', 'study')."""
+    """Mark a to-do or habit as done (e.g. 'exercise', 'study'). Not for step counts (use log_steps)."""
     t = household.complete_task(task)
     if not t:
         return f"Nothing on today's list matches {task}."
@@ -291,7 +299,8 @@ def remove_task(task: str) -> str:
 
 
 def log_steps(steps: int) -> str:
-    """Record today's step count (the user tells you, e.g. from their phone)."""
+    """Record today's step count (the user tells you, e.g. from their phone).
+    Use this for any "I walked N steps"; never complete_task for steps."""
     household.log(f"Steps: {int(steps)}")
     if int(steps) >= 10000:
         household.complete_task("steps")
@@ -305,7 +314,8 @@ def habit_report(days: int = 14) -> str:
 
 
 def log_note(text: str) -> str:
-    """Write something notable in the household log (moods, events, achievements, what the user did)."""
+    """Write an achievement or event the user wants recorded in the household log.
+    Not for passing remarks, anecdotes or facts about people (use remember for facts)."""
     household.log(text)
     return "Noted in the household log."
 
